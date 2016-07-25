@@ -1,8 +1,8 @@
 /********** PARSE API ACCESS CREDENTIALS **********/
 
-var application_id = BuildProperties.parse_application_id;
-var rest_api_key = BuildProperties.parse_rest_key;
-var api_version = BuildProperties.parse_api_version;
+var application_id = window.BuildProperties.parse_application_id;
+var rest_api_key = window.BuildProperties.parse_rest_key;
+var api_version = window.BuildProperties.parse_api_version;
 
 /******************* END *************************/
 
