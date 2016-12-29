@@ -1,5 +1,6 @@
 /********** PARSE API ACCESS CREDENTIALS **********/
 
+var parse_server_url = window.BuildProperties.parse_server_url;
 var application_id = window.BuildProperties.parse_application_id;
 var rest_api_key = window.BuildProperties.parse_rest_key;
 var api_version = window.BuildProperties.parse_api_version;
@@ -79,8 +80,13 @@ var api_version = window.BuildProperties.parse_api_version;
         // create request parameteres
 		var type = methodMap[method];
 	    options || (options = {});
-		var base_url = "https://api.parse.com/" + api_version + "/classes";
-		var url = base_url + "/" + class_name + "/";
+
+        var base_url = /api.parse.com/.test(parse_server_url)
+            ? parse_server_url + "/" + api_version + "/classes"
+            : parse_server_url + "/classes";
+
+        var url = base_url + "/" + class_name + "/";
+
         if (method != "create") {
             url = url + object_id;
         }
