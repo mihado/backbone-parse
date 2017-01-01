@@ -82,7 +82,7 @@ var api_version = window.BuildProperties.parse_api_version;
 	    options || (options = {});
 
         var base_url = /api.parse.com/.test(parse_server_url)
-            ? parse_server_url + "/" + api_version + "/classes"
+            ? parse_server_url + api_version + "/classes"
             : parse_server_url + "/classes";
 
         var url = base_url + "/" + class_name + "/";
